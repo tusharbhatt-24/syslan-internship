@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View all submitted event feedback — ratings, comments, and attendee insights.">
+  <title>Submissions — EventPulse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">⚡</span> EventPulse
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="submissions.html" class="active">Submissions</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <h1>All <span class="grad">Submissions</span></h1>
+      <p>Feedback from attendees across all events.</p>
+    </section>
+
+    <div class="wrap">
+      <div class="state-box" id="loading">
+        <div class="spinner"></div>
+        <p>Loading submissions…</p>
+      </div>
+
+      <div class="state-box" id="empty" style="display:none">
+        <div class="icon">📭</div>
+        <h3>No feedback yet</h3>
+        <p class="hint">Be the first to share your experience.</p>
+        <br>
+        <a href="feedback.html" class="btn btn-primary">Submit Feedback →</a>
+      </div>
+
+      <div class="sub-grid" id="grid" style="display:none"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 <a href="index.html">EventPulse</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+  <script src="js/submissions.js"></script>
+</body>
+</html>

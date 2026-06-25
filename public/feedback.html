@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your event feedback — rate events and share comments to help us improve.">
+  <title>Feedback — EventPulse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">⚡</span> EventPulse
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+        <li><a href="submissions.html">Submissions</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <h1>Share Your <span class="grad">Feedback</span></h1>
+      <p>Help us improve by sharing your thoughts on the events you attended.</p>
+    </section>
+
+    <div class="wrap">
+      <div class="form-wrap">
+
+        <div class="alert alert-ok" id="alertOk">
+          ✅ Thank you! Your feedback has been submitted.
+        </div>
+        <div class="alert alert-err" id="alertErr">
+          ❌ <span id="alertErrMsg">Something went wrong. Please try again.</span>
+        </div>
+
+        <div class="form-card">
+          <form id="feedbackForm" novalidate>
+
+            <div class="field">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" class="input" id="name" name="name" placeholder="Your name" autocomplete="name">
+              <div class="field-error" id="nameErr">Please enter your name.</div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" class="input" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+              <div class="field-error" id="emailErr">Please enter a valid email.</div>
+            </div>
+
+            <div class="field">
+              <label for="event">Event <span class="req">*</span></label>
+              <select class="select" id="event" name="event">
+                <option value="" disabled selected>Select an event…</option>
+                <option value="Tech Conference 2026">Tech Conference 2026</option>
+                <option value="Design Workshop">Design Workshop</option>
+                <option value="Startup Pitch Day">Startup Pitch Day</option>
+                <option value="AI & ML Summit">AI &amp; ML Summit</option>
+                <option value="Cloud DevOps Meetup">Cloud DevOps Meetup</option>
+              </select>
+              <div class="field-error" id="eventErr">Please select an event.</div>
+            </div>
+
+            <div class="field">
+              <label>Rating <span class="req">*</span></label>
+              <div class="stars" id="starsGroup">
+                <input type="radio" name="rating" id="r1" value="1">
+                <label for="r1" data-val="1">★</label>
+                <input type="radio" name="rating" id="r2" value="2">
+                <label for="r2" data-val="2">★</label>
+                <input type="radio" name="rating" id="r3" value="3">
+                <label for="r3" data-val="3">★</label>
+                <input type="radio" name="rating" id="r4" value="4">
+                <label for="r4" data-val="4">★</label>
+                <input type="radio" name="rating" id="r5" value="5">
+                <label for="r5" data-val="5">★</label>
+              </div>
+              <div class="field-error" id="ratingErr">Please select a rating.</div>
+            </div>
+
+            <div class="field">
+              <label for="comments">Comments</label>
+              <textarea class="textarea" id="comments" name="comments" placeholder="Share your experience…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+              Submit Feedback
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 <a href="index.html">EventPulse</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+  <script src="js/feedback.js"></script>
+</body>
+</html>
